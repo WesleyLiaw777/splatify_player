@@ -5,6 +5,7 @@ import { playState, playingTrackState } from "@/atoms/playerAtom";
 function Poster({ track, chooseTrack }) {
   const [play, setPlay] = useRecoilState(playState);
   const [playingTrack, setPlayingTrack] = useRecoilState(playingTrackState);
+  
   const handlePlay = () => {
     chooseTrack(track);
 

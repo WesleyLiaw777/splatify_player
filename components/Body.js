@@ -6,7 +6,8 @@ import Track from "./Track";
 
 function Body({ spotifyApi, chooseTrack }) {
   const { data: session } = useSession();
-  const { accessToken } = session;
+  // const { accessToken } = session;
+  const accessToken = session?.accessToken;
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [newReleases, setNewReleases] = useState([]);
@@ -71,7 +72,13 @@ function Body({ spotifyApi, chooseTrack }) {
               ))
           : searchResults
               .slice(0, 4)
-              .map((track) => <Poster key={track.id} track={track} />)}
+              .map((track) => (
+                <Poster
+                  key={track.id}
+                  track={track}
+                  chooseTrack={chooseTrack}
+                />
+              ))}
       </div>
 
       <div className="flex gap-x-8 absolute min-w-full md:relative ml-6">
