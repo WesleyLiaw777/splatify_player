@@ -6,7 +6,6 @@ import Track from "./Track";
 
 function Body({ spotifyApi, chooseTrack }) {
   const { data: session } = useSession();
-  // const { accessToken } = session;
   const accessToken = session?.accessToken;
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);

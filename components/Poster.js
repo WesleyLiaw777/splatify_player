@@ -13,7 +13,6 @@ function Poster({ track, chooseTrack }) {
       setPlay(!play);
     }
   };
-  console.log(track);
 
   return (
     <div
